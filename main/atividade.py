@@ -1,8 +1,8 @@
 from openpyxl import load_workbook
 
-def carregar_dados(file):
-	wb = load_workbook(filename=file)
-	ws = wb['tabela-de-transacao']
+def fetch_data(file):
+	wb = load_workbook(file)
+	ws = wb['Página1']
 	di = {}
 	for row in ws.rows:
 		for cell in row:
@@ -11,18 +11,18 @@ def carregar_dados(file):
 				di[chave] = cell.value
 	return di
 
-def valores_celulas(coluna, dados):
-	valores={}
+def get_values_cells(coluna, dados):
+	valores = {}
 	for key in dados:
 		if dados[key] == coluna:
 			letra, digito = key
-			for i in range(int(digito)+1,12):
+			for i in range(int(digito) + 1, 12):
 				valor = dados[letra + str(i)]
 				if valor == 1:
 					valores[i] = int(valor)
 	return valores
 
-def calculo_comparativo(dados1, dados2):
+def compareTo(dados1, dados2):
 	valor = 0
 	for i in dados1:
 		for j in dados2:
@@ -31,10 +31,10 @@ def calculo_comparativo(dados1, dados2):
 					valor += 1
 	return valor
 
-def getProdutos(dados):
+def getProducts(dados):
     valores=[]
     for key in dados:
-        if len(key) ==2:
+        if len(key) == 2:
             letra, digito = key
             if digito == '1':
                 if dados[key] != 'None' and dados[key] != 'TID':
