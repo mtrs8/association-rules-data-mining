@@ -18,8 +18,8 @@ def get_values_cells(coluna, dados):
 			letra, digito = i
 			for j in range(int(digito) + 1, 12):
 				valor = dados[letra + str(j)]
-				if valor == 1:
-					valores[j] = int(valor)
+				if valor == 'sim':
+					valores[j] = valor
 	return valores
 
 def compareTo(dados1, dados2):
