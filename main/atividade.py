@@ -41,3 +41,16 @@ def getProducts(dados):
                    valores.append(dados[i])
                    
     return valores
+
+def calculate_support_trust(data, products, itens):
+	for i in range(0, itens):
+		x = get_values_cells(products[i], data)
+		for j in range(0,itens):
+			if i != j:
+				y = get_values_cells(products[j], data)
+				suporte= float(compareTo(x, y) / 10)
+				confianca= float(compareTo(x, y) / len(x))
+				print("\n", products[i], " e ", products[j])
+				print("Suporte: ", round(suporte, 2) )
+				print("Confiança:", round(confianca, 2))
+				print("\n")
