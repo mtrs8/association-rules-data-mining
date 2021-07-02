@@ -13,13 +13,13 @@ def fetch_data(file):
 
 def get_values_cells(coluna, dados):
 	valores = {}
-	for key in dados:
-		if dados[key] == coluna:
-			letra, digito = key
-			for i in range(int(digito) + 1, 12):
-				valor = dados[letra + str(i)]
+	for i in dados:
+		if dados[i] == coluna:
+			letra, digito = i
+			for j in range(int(digito) + 1, 12):
+				valor = dados[letra + str(j)]
 				if valor == 1:
-					valores[i] = int(valor)
+					valores[j] = int(valor)
 	return valores
 
 def compareTo(dados1, dados2):
@@ -33,11 +33,11 @@ def compareTo(dados1, dados2):
 
 def getProducts(dados):
     valores=[]
-    for key in dados:
-        if len(key) == 2:
-            letra, digito = key
+    for i in dados:
+        if len(i) == 2:
+            letra, digito = i
             if digito == '1':
-                if dados[key] != 'None' and dados[key] != 'TID':
-                   valores.append(dados[key])
+                if dados[i] != 'None' and dados[i] != 'TID':
+                   valores.append(dados[i])
                    
     return valores
