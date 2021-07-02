@@ -3,7 +3,7 @@
 # Alunos: Matheus Alves e Matheus Macedo
     # Leia o Arquivo Readme para instruções.
 
-from atividade import calculate_support_trust, fetch_data, getProducts
+from atividade import calculate_support_confidence, fetch_data, getProducts
 from pathlib import Path
 
 path = Path("files/")
@@ -14,4 +14,4 @@ data = fetch_data(file)
 products = getProducts(data)
 itens= len(products)
 
-calculate_support_trust(data, products, itens)
+calculate_support_confidence(data, products, itens)
