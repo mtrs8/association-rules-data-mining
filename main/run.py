@@ -29,17 +29,21 @@ for i in range(0, itens):
 x_values = get_values_cells("leite", data)
 y_values = get_values_cells("café", data)
 suporte = float(compareTo(x_values, y_values)/10)
-confianca= float(compareTo(x_values, y_values)/len(x_values))
+confianca = float(compareTo(x_values, y_values)/len(x_values))
+confianca1 = float(compareTo(y_values, x_values)/len(x_values))
 
 print("\nLeite e café:")
 print("Suporte:", suporte)
 print("Confiança:", confianca)
+print("Confiança:", confianca1)
 
 x_values= get_values_cells("pão", data)
 y_values= get_values_cells("manteiga", data)
 suporte = float(compareTo(x_values, y_values)/10)
 confianca = float(compareTo(x_values, y_values)/len(x_values))
+confianca1 = float(compareTo(y_values, x_values)/len(x_values))
 
 print("\nPão e manteiga:")
 print("Suporte:", suporte)
 print("Confiança:", confianca)
+print("Confiança:", confianca1)
