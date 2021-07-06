@@ -8,7 +8,7 @@ from pathlib import Path
 
 path = Path("files/")
 
-file = path / "tabela-de-transacao.xlsx"
+file = path / "tabela-de-dados.xlsx"
 
 data = fetch_data(file)
 products = getProducts(data)
